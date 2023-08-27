@@ -28,14 +28,19 @@ namespace Guitar4Rhythm.Controls {
             }
         }
 
-        private bool _isListening = false;
+        public string _listenerText = "...";
+        public string ListenerText {
+            get => _listenerText;
+            set => _listenerText = value;
+        }
 
+        private bool _isListening = false;
         public bool IsListening {
             get => _isListening;
             set {
                 _isListening = value;
                 if (_isListening) {
-                    Text = "...";
+                    Text = ListenerText;
                 } else {
                     Text = BoundKey.ToString();
                 }
