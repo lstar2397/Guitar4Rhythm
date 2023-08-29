@@ -6,15 +6,21 @@
         xmlns:local="clr-namespace:Guitar4Rhythm.Views"
         xmlns:vm="clr-namespace:Guitar4Rhythm.ViewModels"
         xmlns:custom="clr-namespace:Guitar4Rhythm.Controls"
+        xmlns:cvt="clr-namespace:Guitar4Rhythm.Converters"
+        xmlns:enum="clr-namespace:Guitar4Rhythm.Models.Enums"
         mc:Ignorable="d"
-        Title="Guitar4Rhythm" Height="450" Width="550">
+        Title="Guitar4Rhythm" Height="500" Width="550">
     <Window.DataContext>
         <vm:MainViewModel />
     </Window.DataContext>
+    <Window.Resources>
+        <cvt:EnumToBooleanConverter x:Key="EnumToBooleanConverter" />
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid Grid.Row="0"
               Margin="0,8,0,24">
@@ -212,5 +218,29 @@
                 </StackPanel>
             </Grid>
         </Grid>
+        <Border Grid.Row="2" Padding="4" Height="56">
+            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <RadioButton Grid.Row="0"
+                                 Width="120"
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center"
+                                 IsChecked="{Binding SelectedKeyInputType, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static enum:KeyInputType.VirtualKeyCode}}"
+                                 GroupName="InputType"
+                                 Content="Virtual key code" />
+                    <RadioButton Grid.Row="1"
+                                 Width="120"
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center"
+                                 GroupName="InputType"
+                                 IsChecked="{Binding SelectedKeyInputType, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static enum:KeyInputType.ScanCode}}"
+                                 Content="Scan code" />
+                </Grid>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>

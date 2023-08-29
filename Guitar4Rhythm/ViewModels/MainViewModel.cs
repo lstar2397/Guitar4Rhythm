@@ -52,11 +52,11 @@ namespace Guitar4Rhythm.ViewModels {
             }
         }
 
-        private KeyInputType _keyInputType = KeyInputType.VirtualKeyCode;
-        public KeyInputType KeyInputType {
-            get => _keyInputType;
+        private KeyInputType _selectedKeyInputType = KeyInputType.VirtualKeyCode;
+        public KeyInputType SelectedKeyInputType {
+            get => _selectedKeyInputType;
             set {
-                _keyInputType = value;
+                _selectedKeyInputType = value;
                 OnPropertyChanged();
             }
         }
@@ -110,60 +110,60 @@ namespace Guitar4Rhythm.ViewModels {
                     (key == GuitarControllerKeys.StrumDownKey && !IsKeyDown(GuitarControllerKeys.StrumDownKey))) {
                     if (IsKeyDown(GuitarControllerKeys.GreenKey)) {
                         KeyboardOutputBackgroundColors.Key1 = Brushes.LightGreen;
-                        KeyboardSimulator.SendKey(KeyboardOutputKeys.Key1, false, KeyInputType);
+                        KeyboardSimulator.SendKey(KeyboardOutputKeys.Key1, false, SelectedKeyInputType);
                         Thread.Sleep(5);
-                        KeyboardSimulator.SendKey(KeyboardOutputKeys.Key1, true, KeyInputType);
+                        KeyboardSimulator.SendKey(KeyboardOutputKeys.Key1, true, SelectedKeyInputType);
                         _isKeyDown[KeyboardOutputKeys.Key1] = true;
                     }
                     if (IsKeyDown(GuitarControllerKeys.RedKey)) {
                         KeyboardOutputBackgroundColors.Key2 = Brushes.LightGreen;
-                        KeyboardSimulator.SendKey(KeyboardOutputKeys.Key2, false, KeyInputType);
+                        KeyboardSimulator.SendKey(KeyboardOutputKeys.Key2, false, SelectedKeyInputType);
                         Thread.Sleep(5);
-                        KeyboardSimulator.SendKey(KeyboardOutputKeys.Key2, true, KeyInputType);
+                        KeyboardSimulator.SendKey(KeyboardOutputKeys.Key2, true, SelectedKeyInputType);
                         _isKeyDown[KeyboardOutputKeys.Key2] = true;
                     }
                     if (IsKeyDown(GuitarControllerKeys.YellowKey)) {
                         KeyboardOutputBackgroundColors.Key3 = Brushes.LightGreen;
-                        KeyboardSimulator.SendKey(KeyboardOutputKeys.Key3, false, KeyInputType);
+                        KeyboardSimulator.SendKey(KeyboardOutputKeys.Key3, false, SelectedKeyInputType);
                         Thread.Sleep(5);
-                        KeyboardSimulator.SendKey(KeyboardOutputKeys.Key3, true, KeyInputType);
+                        KeyboardSimulator.SendKey(KeyboardOutputKeys.Key3, true, SelectedKeyInputType);
                         _isKeyDown[KeyboardOutputKeys.Key3] = true;
                     }
                     if (IsKeyDown(GuitarControllerKeys.BlueKey)) {
                         KeyboardOutputBackgroundColors.Key4 = Brushes.LightGreen;
-                        KeyboardSimulator.SendKey(KeyboardOutputKeys.Key4, false, KeyInputType);
+                        KeyboardSimulator.SendKey(KeyboardOutputKeys.Key4, false, SelectedKeyInputType);
                         Thread.Sleep(5);
-                        KeyboardSimulator.SendKey(KeyboardOutputKeys.Key4, true, KeyInputType);
+                        KeyboardSimulator.SendKey(KeyboardOutputKeys.Key4, true, SelectedKeyInputType);
                         _isKeyDown[KeyboardOutputKeys.Key4] = true;
                     }
                     if (IsKeyDown(GuitarControllerKeys.OrangeKey)) {
                         KeyboardOutputBackgroundColors.Key5 = Brushes.LightGreen;
-                        KeyboardSimulator.SendKey(KeyboardOutputKeys.Key5, false, KeyInputType);
+                        KeyboardSimulator.SendKey(KeyboardOutputKeys.Key5, false, SelectedKeyInputType);
                         Thread.Sleep(5);
-                        KeyboardSimulator.SendKey(KeyboardOutputKeys.Key5, true, KeyInputType);
+                        KeyboardSimulator.SendKey(KeyboardOutputKeys.Key5, true, SelectedKeyInputType);
                         _isKeyDown[KeyboardOutputKeys.Key5] = true;
                     }
                 }
             } else {
                 if (key == GuitarControllerKeys.GreenKey && IsKeyDown(GuitarControllerKeys.GreenKey)) {
                     KeyboardOutputBackgroundColors.Key1 = Brushes.Transparent;
-                    KeyboardSimulator.SendKey(KeyboardOutputKeys.Key1, false, KeyInputType);
+                    KeyboardSimulator.SendKey(KeyboardOutputKeys.Key1, false, SelectedKeyInputType);
                     _isKeyDown[KeyboardOutputKeys.Key1] = false;
                 } else if (key == GuitarControllerKeys.RedKey && IsKeyDown(GuitarControllerKeys.RedKey)) {
                     KeyboardOutputBackgroundColors.Key2 = Brushes.Transparent;
-                    KeyboardSimulator.SendKey(KeyboardOutputKeys.Key2, false, KeyInputType);
+                    KeyboardSimulator.SendKey(KeyboardOutputKeys.Key2, false, SelectedKeyInputType);
                     _isKeyDown[KeyboardOutputKeys.Key2] = false;
                 } else if (key == GuitarControllerKeys.YellowKey && IsKeyDown(GuitarControllerKeys.YellowKey)) {
                     KeyboardOutputBackgroundColors.Key3 = Brushes.Transparent;
-                    KeyboardSimulator.SendKey(KeyboardOutputKeys.Key3, false, KeyInputType);
+                    KeyboardSimulator.SendKey(KeyboardOutputKeys.Key3, false, SelectedKeyInputType);
                     _isKeyDown[KeyboardOutputKeys.Key3] = false;
                 } else if (key == GuitarControllerKeys.BlueKey && IsKeyDown(GuitarControllerKeys.BlueKey)) {
                     KeyboardOutputBackgroundColors.Key4 = Brushes.Transparent;
-                    KeyboardSimulator.SendKey(KeyboardOutputKeys.Key4, false, KeyInputType);
+                    KeyboardSimulator.SendKey(KeyboardOutputKeys.Key4, false, SelectedKeyInputType);
                     _isKeyDown[KeyboardOutputKeys.Key4] = false;
                 } else if (key == GuitarControllerKeys.OrangeKey && IsKeyDown(GuitarControllerKeys.OrangeKey)) {
                     KeyboardOutputBackgroundColors.Key5 = Brushes.Transparent;
-                    KeyboardSimulator.SendKey(KeyboardOutputKeys.Key5, false, KeyInputType);
+                    KeyboardSimulator.SendKey(KeyboardOutputKeys.Key5, false, SelectedKeyInputType);
                     _isKeyDown[KeyboardOutputKeys.Key5] = false;
                 }
             }
