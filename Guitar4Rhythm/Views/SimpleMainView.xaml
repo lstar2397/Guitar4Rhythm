@@ -240,6 +240,8 @@
                                  IsChecked="{Binding SelectedKeyInputType, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static enum:KeyInputType.ScanCode}}"
                                  Content="Scan code" />
                 </Grid>
+                <Button Width="96" Margin="0,0,8,0" Command="{Binding StartCommand}">Start</Button>
+                <Button Width="96" Margin="0,0,8,0" Command="{Binding StopCommand}">Stop</Button>
             </StackPanel>
         </Border>
     </Grid>

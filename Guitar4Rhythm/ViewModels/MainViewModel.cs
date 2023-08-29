@@ -61,6 +61,10 @@ namespace Guitar4Rhythm.ViewModels {
             }
         }
 
+        public RelayCommand StartCommand { get; set; }
+
+        public RelayCommand StopCommand { get; set; }
+
         private string _filePath = "config.json";
         private KeyboardHook _keyboardHook;
         private Dictionary<Key, bool> _isKeyDown = new Dictionary<Key, bool>();
@@ -75,7 +79,9 @@ namespace Guitar4Rhythm.ViewModels {
 
             _keyboardHook = new KeyboardHook();
             _keyboardHook.KeyBlocking += _keyboardHook_KeyBlocking;
-            _keyboardHook.Hook();
+
+            StartCommand = new RelayCommand(o => _keyboardHook.Hook(), o => !_keyboardHook.IsHooked);
+            StopCommand = new RelayCommand(o => _keyboardHook.Unhook(), o => _keyboardHook.IsHooked);
         }
 
         private bool IsKeyDown(Key key) {
