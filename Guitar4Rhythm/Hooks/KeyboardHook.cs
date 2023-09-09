@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Guitar4Rhythm.Hooks {
@@ -34,13 +30,13 @@ namespace Guitar4Rhythm.Hooks {
 
         #region [ Keyboard Hook Structs ]
         private delegate IntPtr LowLevelKeyboardProc(int nCode, IntPtr wParam, IntPtr lParam);
-        private static LowLevelKeyboardProc _proc;
-        private static IntPtr _hookID = IntPtr.Zero;
+        private LowLevelKeyboardProc _proc;
+        private IntPtr _hookID = IntPtr.Zero;
         #endregion
 
         #region [ Keyboard Hook Events ]
         public delegate bool KeyBlockingDelegate(Key key, KeyStates keyStates);
-        public event KeyBlockingDelegate KeyBlocking;
+        public event KeyBlockingDelegate? KeyBlocking;
         #endregion
 
         public bool IsHooked => _hookID != IntPtr.Zero;
@@ -61,8 +57,8 @@ namespace Guitar4Rhythm.Hooks {
         }
 
         private IntPtr SetHook(LowLevelKeyboardProc proc) {
-            using (var process = Process.GetCurrentProcess())
-            using (var module = process.MainModule) {
+            using (Process process = Process.GetCurrentProcess())
+            using (ProcessModule? module = process.MainModule) {
                 return SetWindowsHookEx(WH_KEYBOARD_LL, proc, GetModuleHandle(module.ModuleName), 0);
             }
         }

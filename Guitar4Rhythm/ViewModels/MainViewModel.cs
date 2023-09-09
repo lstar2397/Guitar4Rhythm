@@ -218,13 +218,13 @@ namespace Guitar4Rhythm.ViewModels {
             File.WriteAllText(_filePath, json);
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null) {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public void OnClosing(object sender, CancelEventArgs e) {
+        public void OnClosing(object? sender, CancelEventArgs e) {
             if (_keyboardHook.IsHooked) {
                 _keyboardHook.Unhook();
             }

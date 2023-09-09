@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Guitar4Rhythm.Views"
         xmlns:vm="clr-namespace:Guitar4Rhythm.ViewModels"
-        xmlns:custom="clr-namespace:Guitar4Rhythm.Controls"
+        xmlns:controls="clr-namespace:Guitar4Rhythm.Controls"
         xmlns:native="clr-namespace:Guitar4Rhythm.WindowsInput.Native"
         mc:Ignorable="d"
         Title="Guitar4Rhythm" Height="500" Width="550">
@@ -53,7 +53,7 @@
                             <Setter Property="Margin" Value="0,0,16,0" />
                             <Setter Property="HorizontalAlignment" Value="Right" />
                         </Style>
-                        <Style TargetType="custom:KeyBindingBox">
+                        <Style TargetType="controls:KeyBindingBox">
                             <Setter Property="Width" Value="80" />
                             <Setter Property="FontSize" Value="16" />
                             <Setter Property="Padding" Value="2" />
@@ -66,7 +66,7 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0">Green</TextBlock>
-                        <custom:KeyBindingBox Grid.Column="1"
+                        <controls:KeyBindingBox Grid.Column="1"
                                               Background="{Binding GuitarControllerBackgroundColors.GreenKey}"
                                               BoundKey="{Binding GuitarControllerKeys.GreenKey, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
                     </Grid>
@@ -76,7 +76,7 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0">Red</TextBlock>
-                        <custom:KeyBindingBox Grid.Column="1"
+                        <controls:KeyBindingBox Grid.Column="1"
                                               Background="{Binding GuitarControllerBackgroundColors.RedKey}"
                                               BoundKey="{Binding GuitarControllerKeys.RedKey, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
                     </Grid>
@@ -86,7 +86,7 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0">Yellow</TextBlock>
-                        <custom:KeyBindingBox Grid.Column="1"
+                        <controls:KeyBindingBox Grid.Column="1"
                                               Background="{Binding GuitarControllerBackgroundColors.YellowKey}"
                                               BoundKey="{Binding GuitarControllerKeys.YellowKey, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
                     </Grid>
@@ -96,7 +96,7 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0">Blue</TextBlock>
-                        <custom:KeyBindingBox Grid.Column="1"
+                        <controls:KeyBindingBox Grid.Column="1"
                                               Background="{Binding GuitarControllerBackgroundColors.BlueKey}"
                                               BoundKey="{Binding GuitarControllerKeys.BlueKey, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
                     </Grid>
@@ -106,7 +106,7 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0">Orange</TextBlock>
-                        <custom:KeyBindingBox Grid.Column="1"
+                        <controls:KeyBindingBox Grid.Column="1"
                                               Background="{Binding GuitarControllerBackgroundColors.OrangeKey}"
                                               BoundKey="{Binding GuitarControllerKeys.OrangeKey, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
                     </Grid>
@@ -116,7 +116,7 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0">Strum Up</TextBlock>
-                        <custom:KeyBindingBox Grid.Column="1"
+                        <controls:KeyBindingBox Grid.Column="1"
                                               Background="{Binding GuitarControllerBackgroundColors.StrumUpKey}"
                                               BoundKey="{Binding GuitarControllerKeys.StrumUpKey, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
                     </Grid>
@@ -126,7 +126,7 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0">Strum Down</TextBlock>
-                        <custom:KeyBindingBox Grid.Column="1"
+                        <controls:KeyBindingBox Grid.Column="1"
                                               Background="{Binding GuitarControllerBackgroundColors.StrumDownKey}"
                                               BoundKey="{Binding GuitarControllerKeys.StrumDownKey, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
                     </Grid>
@@ -154,7 +154,7 @@
                             <Setter Property="Margin" Value="0,0,16,0" />
                             <Setter Property="HorizontalAlignment" Value="Right" />
                         </Style>
-                        <Style TargetType="custom:KeyBindingBox">
+                        <Style TargetType="controls:KeyBindingBox">
                             <Setter Property="Width" Value="80" />
                             <Setter Property="FontSize" Value="16" />
                             <Setter Property="Padding" Value="2" />
@@ -167,7 +167,7 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0">Key 1</TextBlock>
-                        <custom:KeyBindingBox Grid.Column="1"
+                        <controls:KeyBindingBox Grid.Column="1"
                                               Background="{Binding KeyboardOutputBackgroundColors.Key1}"
                                               BoundKey="{Binding KeyboardOutputKeys.Key1, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
                     </Grid>
@@ -177,7 +177,7 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0">Key 2</TextBlock>
-                        <custom:KeyBindingBox Grid.Column="1"
+                        <controls:KeyBindingBox Grid.Column="1"
                                               Background="{Binding KeyboardOutputBackgroundColors.Key2}"
                                               BoundKey="{Binding KeyboardOutputKeys.Key2, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
                     </Grid>
@@ -187,7 +187,7 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0">Key 3</TextBlock>
-                        <custom:KeyBindingBox Grid.Column="1"
+                        <controls:KeyBindingBox Grid.Column="1"
                                               Background="{Binding KeyboardOutputBackgroundColors.Key3}"
                                               BoundKey="{Binding KeyboardOutputKeys.Key3, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
                     </Grid>
@@ -197,7 +197,7 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0">Key 4</TextBlock>
-                        <custom:KeyBindingBox Grid.Column="1"
+                        <controls:KeyBindingBox Grid.Column="1"
                                               Background="{Binding KeyboardOutputBackgroundColors.Key4}"
                                               BoundKey="{Binding KeyboardOutputKeys.Key4, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
                     </Grid>
@@ -207,7 +207,7 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0">Key 5</TextBlock>
-                        <custom:KeyBindingBox Grid.Column="1"
+                        <controls:KeyBindingBox Grid.Column="1"
                                               Background="{Binding KeyboardOutputBackgroundColors.Key5}"
                                               BoundKey="{Binding KeyboardOutputKeys.Key5, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
                     </Grid>

@@ -1,11 +1,10 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Windows.Input;
 
 namespace Guitar4Rhythm.Models {
     public class GuitarController<T> : INotifyPropertyChanged {
-        private T _greenKey;
-        public T GreenKey {
+        private T? _greenKey;
+        public T? GreenKey {
             get => _greenKey;
             set {
                 _greenKey = value;
@@ -13,8 +12,8 @@ namespace Guitar4Rhythm.Models {
             }
         }
 
-        private T _redKey;
-        public T RedKey {
+        private T? _redKey;
+        public T? RedKey {
             get => _redKey;
             set {
                 _redKey = value;
@@ -22,8 +21,8 @@ namespace Guitar4Rhythm.Models {
             }
         }
 
-        private T _yellowKey;
-        public T YellowKey {
+        private T? _yellowKey;
+        public T? YellowKey {
             get => _yellowKey;
             set {
                 _yellowKey = value;
@@ -31,8 +30,8 @@ namespace Guitar4Rhythm.Models {
             }
         }
 
-        private T _blueKey;
-        public T BlueKey {
+        private T? _blueKey;
+        public T? BlueKey {
             get => _blueKey;
             set {
                 _blueKey = value;
@@ -40,8 +39,8 @@ namespace Guitar4Rhythm.Models {
             }
         }
 
-        private T _orangeKey;
-        public T OrangeKey {
+        private T? _orangeKey;
+        public T? OrangeKey {
             get => _orangeKey;
             set {
                 _orangeKey = value;
@@ -49,8 +48,8 @@ namespace Guitar4Rhythm.Models {
             }
         }
 
-        private T _strumUpKey;
-        public T StrumUpKey {
+        private T? _strumUpKey;
+        public T? StrumUpKey {
             get => _strumUpKey;
             set {
                 _strumUpKey = value;
@@ -58,8 +57,8 @@ namespace Guitar4Rhythm.Models {
             }
         }
 
-        private T _strumDownKey;
-        public T StrumDownKey {
+        private T? _strumDownKey;
+        public T? StrumDownKey {
             get => _strumDownKey;
             set {
                 _strumDownKey = value;
@@ -67,7 +66,7 @@ namespace Guitar4Rhythm.Models {
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null) {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

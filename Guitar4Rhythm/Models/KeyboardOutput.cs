@@ -1,11 +1,10 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Windows.Input;
 
 namespace Guitar4Rhythm.Models {
     public class KeyboardOutput<T> : INotifyPropertyChanged {
-        private T _key1;
-        public T Key1 {
+        private T? _key1;
+        public T? Key1 {
             get => _key1;
             set {
                 _key1 = value;
@@ -13,8 +12,8 @@ namespace Guitar4Rhythm.Models {
             }
         }
 
-        private T _key2;
-        public T Key2 {
+        private T? _key2;
+        public T? Key2 {
             get => _key2;
             set {
                 _key2 = value;
@@ -22,8 +21,8 @@ namespace Guitar4Rhythm.Models {
             }
         }
 
-        private T _key3;
-        public T Key3 {
+        private T? _key3;
+        public T? Key3 {
             get => _key3;
             set {
                 _key3 = value;
@@ -31,8 +30,8 @@ namespace Guitar4Rhythm.Models {
             }
         }
 
-        private T _key4;
-        public T Key4 {
+        private T? _key4;
+        public T? Key4 {
             get => _key4;
             set {
                 _key4 = value;
@@ -40,8 +39,8 @@ namespace Guitar4Rhythm.Models {
             }
         }
 
-        private T _key5;
-        public T Key5 {
+        private T? _key5;
+        public T? Key5 {
             get => _key5;
             set {
                 _key5 = value;
@@ -49,7 +48,7 @@ namespace Guitar4Rhythm.Models {
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null) {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
