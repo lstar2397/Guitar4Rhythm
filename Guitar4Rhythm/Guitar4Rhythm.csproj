@@ -65,15 +65,23 @@
     <Compile Include="Controls\KeyBindingBox.cs" />
     <Compile Include="Converters\EnumToBooleanConverter.cs" />
     <Compile Include="Hooks\KeyboardHook.cs" />
-    <Compile Include="Models\Enums\KeyInputType.cs" />
     <Compile Include="Models\GuitarController.cs" />
     <Compile Include="Models\KeyboardOutput.cs" />
-    <Compile Include="Models\KeyboardSimulator.cs" />
     <Compile Include="RelayCommand.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Views\SimpleMainView.xaml.cs">
       <DependentUpon>SimpleMainView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WindowsInput\InputBuilder.cs" />
+    <Compile Include="WindowsInput\KeyboardInputSimulator.cs" />
+    <Compile Include="WindowsInput\Native\HARDWAREINPUT.cs" />
+    <Compile Include="WindowsInput\Native\INPUT.cs" />
+    <Compile Include="WindowsInput\Native\InputType.cs" />
+    <Compile Include="WindowsInput\Native\KEYBDINPUT.cs" />
+    <Compile Include="WindowsInput\Native\KeyboardInputType.cs" />
+    <Compile Include="WindowsInput\Native\MOUSEINPUT.cs" />
+    <Compile Include="WindowsInput\Native\MOUSEKEYBDHARDWAREINPUT.cs" />
+    <Compile Include="WindowsInput\Native\NativeMethods.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
