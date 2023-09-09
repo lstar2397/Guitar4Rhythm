@@ -49,11 +49,11 @@ namespace Guitar4Rhythm.ViewModels {
             }
         }
 
-        private KeyboardInputType _selectedKeyInputType = KeyboardInputType.VirtualKeyCode;
-        public KeyboardInputType SelectedKeyInputType {
-            get => _selectedKeyInputType;
+        private KeyboardInputType _selectedKeyboardInputType = KeyboardInputType.VirtualKeyCode;
+        public KeyboardInputType SelectedKeyboardInputType {
+            get => _selectedKeyboardInputType;
             set {
-                _selectedKeyInputType = value;
+                _selectedKeyboardInputType = value;
                 OnPropertyChanged();
             }
         }
@@ -151,9 +151,9 @@ namespace Guitar4Rhythm.ViewModels {
                     }
 
                     if (keyList.Count > 0) {
-                        _inputSimulator.KeyUp(SelectedKeyInputType, keyList.ToArray());
+                        _inputSimulator.KeyUp(SelectedKeyboardInputType, keyList.ToArray());
                         Thread.Sleep(5);
-                        _inputSimulator.KeyDown(SelectedKeyInputType, keyList.ToArray());
+                        _inputSimulator.KeyDown(SelectedKeyboardInputType, keyList.ToArray());
                     }
                 }
             } else {
@@ -185,7 +185,7 @@ namespace Guitar4Rhythm.ViewModels {
                 }
 
                 if (keyList.Count > 0) {
-                    _inputSimulator.KeyUp(SelectedKeyInputType, keyList.ToArray());
+                    _inputSimulator.KeyUp(SelectedKeyboardInputType, keyList.ToArray());
                 }
             }
 

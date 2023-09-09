@@ -6,16 +6,12 @@
         xmlns:local="clr-namespace:Guitar4Rhythm.Views"
         xmlns:vm="clr-namespace:Guitar4Rhythm.ViewModels"
         xmlns:custom="clr-namespace:Guitar4Rhythm.Controls"
-        xmlns:cvt="clr-namespace:Guitar4Rhythm.Converters"
         xmlns:native="clr-namespace:Guitar4Rhythm.WindowsInput.Native"
         mc:Ignorable="d"
         Title="Guitar4Rhythm" Height="500" Width="550">
     <Window.DataContext>
         <vm:MainViewModel />
     </Window.DataContext>
-    <Window.Resources>
-        <cvt:EnumToBooleanConverter x:Key="EnumToBooleanConverter" />
-    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -229,7 +225,9 @@
                                  Width="120"
                                  HorizontalAlignment="Center"
                                  VerticalAlignment="Center"
-                                 IsChecked="{Binding SelectedKeyInputType, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static native:KeyboardInputType.VirtualKeyCode}}"
+                                 IsChecked="{Binding SelectedKeyboardInputType,
+                        Converter={StaticResource KeyboardInputTypeToBoolConverter},
+                        ConverterParameter={x:Static native:KeyboardInputType.VirtualKeyCode}}"
                                  GroupName="InputType"
                                  Content="Virtual key code" />
                     <RadioButton Grid.Row="1"
@@ -237,7 +235,9 @@
                                  HorizontalAlignment="Center"
                                  VerticalAlignment="Center"
                                  GroupName="InputType"
-                                 IsChecked="{Binding SelectedKeyInputType, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static native:KeyboardInputType.ScanCode}}"
+                                 IsChecked="{Binding SelectedKeyboardInputType,
+                        Converter={StaticResource KeyboardInputTypeToBoolConverter},
+                        ConverterParameter={x:Static native:KeyboardInputType.ScanCode}}"
                                  Content="Scan code" />
                 </Grid>
                 <Button Width="96" Margin="0,0,8,0" Command="{Binding StartCommand}">Start</Button>

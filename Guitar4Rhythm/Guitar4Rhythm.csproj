@@ -63,7 +63,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Controls\KeyBindingBox.cs" />
-    <Compile Include="Converters\EnumToBooleanConverter.cs" />
+    <Compile Include="Converters\KeyboardInputTypeToBoolConverter.cs" />
     <Compile Include="Hooks\KeyboardHook.cs" />
     <Compile Include="Models\GuitarController.cs" />
     <Compile Include="Models\KeyboardOutput.cs" />
@@ -111,6 +111,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Styles\ConverterResourceDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\SimpleMainView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

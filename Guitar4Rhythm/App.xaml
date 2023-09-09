@@ -4,6 +4,10 @@
              xmlns:local="clr-namespace:Guitar4Rhythm"
              StartupUri="Views/SimpleMainView.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/ConverterResourceDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
